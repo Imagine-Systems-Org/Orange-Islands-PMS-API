@@ -61,6 +61,7 @@ databaseConnector(databaseURL).then(() => {
     ${error}
     `);
 });
+
 // Return a bunch of useful details from the database connection
 // Dig into each property here:
 // https://mongoosejs.com/docs/api/connection.html
@@ -78,6 +79,8 @@ app.get("/databaseHealth", (request, response) => {
     })
 });
 
+
+
 // Add a route just to make sure things work.
 // This path is the server API's "homepage".
 app.get('/', (request, response) => {
@@ -85,6 +88,9 @@ app.get('/', (request, response) => {
         message:"Hello world!"
     });
 });
+
+
+
 
 // Keep this route at the end of this file, only before the module.exports!
 // A 404 route should only trigger if no preceding routes or middleware was run. 
