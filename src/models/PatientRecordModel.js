@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
 
-const PatientEntrySchema = new mongoose.Schema({
+const PatientRecordSchema = new mongoose.Schema({
     entryDate: Date,
     treatment: String,
     condition: String,
@@ -11,6 +11,6 @@ const PatientEntrySchema = new mongoose.Schema({
     patient: {type: mongoose.Types.ObjectId, ref: 'Patient'}
 });
 
-const PatientEntry = mongoose.model('PatientEntry', PatientEntrySchema);
+const PatientRecord = mongoose.model('PatientRecord', PatientRecordSchema);
 
-module.exports = {PatientEntry};
+module.exports = {PatientRecord};

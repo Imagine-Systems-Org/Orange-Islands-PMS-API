@@ -43,10 +43,10 @@ switch (process.env.NODE_ENV.toLowerCase()) {
         databaseURL = "mongodb://localhost:27017/orangeislandspms-test";
         break;
     case "development":
-        databaseURL = "mongodb://localhost:27017/orangeislandspms-dev";
+        databaseURL = process.env.DB_URI;
         break;
     case "production":
-        databaseURL = process.env.DATABASE_URL;
+        databaseURL = process.env.DB_URI;
         break;
     default:
         console.error("Incorrect JS environment specified, database will not be connected.");
@@ -79,7 +79,29 @@ app.get("/databaseHealth", (request, response) => {
     })
 });
 
+app.get("/databaseDump", async (request, response) => {
+    // Set up an object to store our data.
+    const dumpContainer = {};
 
+    // Get the names of all collections in the DB.
+    var collections = await mongoose.connection.db.listCollections().toArray();
+    collections = collections.map((collection) => collection.name);
+
+    // For each collection, get all their data and add it to the dumpContainer.
+    for (const collectionName of collections) {
+        let collectionData = await mongoose.connection.db.collection(collectionName).find({}).toArray();
+        dumpContainer[collectionName] = collectionData;
+    }
+
+    // Confirm in the terminal that the server is returning the right data.
+    // With pretty formatting too, via JSON.stringify(value, null, spacing for indentation).
+    console.log("Dumping all of this data to the client: \n" + JSON.stringify(dumpContainer, null, 4));
+
+    // Return the big data object.
+    response.json({
+        data: dumpContainer
+    });
+});
 
 // Add a route just to make sure things work.
 // This path is the server API's "homepage".
@@ -88,9 +110,6 @@ app.get('/', (request, response) => {
         message:"Hello world!"
     });
 });
-
-
-
 
 // Keep this route at the end of this file, only before the module.exports!
 // A 404 route should only trigger if no preceding routes or middleware was run. 
