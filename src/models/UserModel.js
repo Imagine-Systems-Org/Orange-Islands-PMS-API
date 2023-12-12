@@ -13,8 +13,7 @@ const UserSchema = new mongoose.Schema({
         required: true
     },
     phone: String,
-    profession: String,
-    refreshToken: String
+    profession: String
 });
 
 const User = mongoose.model('User', UserSchema);

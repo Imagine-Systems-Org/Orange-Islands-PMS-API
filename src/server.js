@@ -43,7 +43,7 @@ switch (process.env.NODE_ENV.toLowerCase()) {
         databaseURL = "mongodb://localhost:27017/orangeislandspms-test";
         break;
     case "development":
-        databaseURL = process.env.DB_URI;
+        databaseURL = process.env.DATABASE_URL;
         break;
     case "production":
         databaseURL = process.env.DB_URI;
@@ -111,6 +111,9 @@ app.get('/', (request, response) => {
     });
 });
 
+const usersController = require("./controllers/UserRoutes");
+app.use("/users", usersController);
+
 // Keep this route at the end of this file, only before the module.exports!
 // A 404 route should only trigger if no preceding routes or middleware was run. 
 // So, put this below where any other routes are placed within this file.
@@ -120,6 +123,9 @@ app.get('*', (request, response) => {
         attemptedPath: request.path
     });
 });
+
+const errorHandler = require('./middleware/errorHandler');
+app.use(errorHandler);
 
 // Export everything needed to run the server.
 module.exports = {
