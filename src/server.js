@@ -114,6 +114,12 @@ app.get('/', (request, response) => {
 const usersController = require("./controllers/UserRoutes");
 app.use("/users", usersController);
 
+const patientsController = require("./controllers/PatientRoutes");
+app.use("/patients", patientsController);
+
+const patientrecordsController = require("./controllers/PatientRecordRoutes");
+app.use("/patientrecords", patientrecordsController);
+
 // Keep this route at the end of this file, only before the module.exports!
 // A 404 route should only trigger if no preceding routes or middleware was run. 
 // So, put this below where any other routes are placed within this file.

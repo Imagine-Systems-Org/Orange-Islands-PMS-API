@@ -5,8 +5,8 @@ const PatientSchema = new mongoose.Schema({
     species: String,
     category: String,
     dateOfBirth: Date,
-    assignedDoctor: {type: mongoose.Types.lastName, ref: 'User'},
-    assignedNurse: {type: mongoose.Types.lastName, ref: 'User'},
+    assignedDoctor: {type: mongoose.Types.ObjectId, ref: 'User'},
+    assignedNurse: {type: mongoose.Types.ObjectId, ref: 'User'},
     bed: String,
     trainer: [{ 
         firstName: String, 

@@ -6,6 +6,7 @@ const { databaseConnector } = require('./database');
 const { User } = require('./models/UserModel');
 const { Patient } = require('./models/PatientModel');
 const { PatientRecord } = require('./models/PatientRecordModel');
+const { hashString } = require('./controllers/UserFunctions');
 
 // Make sure this file can read environment variables.
 const dotenv = require('dotenv');
