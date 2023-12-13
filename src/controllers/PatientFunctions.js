@@ -10,11 +10,11 @@ async function getPatientById(patientID){
 }
 
 async function getPatientsByDoctor(userID){
-    return await Post.find({assignedDoctor: userID}).exec();
+    return await Patient.find({assignedDoctor: userID}).exec();
 }
 
 async function getPatientsByNurse(userID){
-    return await Post.find({assignedNurse: userID}).exec();
+    return await Patient.find({assignedNurse: userID}).exec();
 }
 
 async function createPatient(patientDetails){
