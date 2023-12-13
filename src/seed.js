@@ -76,7 +76,7 @@ const patients = [
     name: "Bubbles",
     species: "Empathy",
     category: "Gardevoir",
-    dateOfBirth: 2005-12-11,
+    dateOfBirth: "2005-12-11",
     bed: "12",
     trainer: [{ 
         firstName: "William", 

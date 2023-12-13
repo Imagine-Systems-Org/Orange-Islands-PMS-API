@@ -13,7 +13,10 @@ const UserSchema = new mongoose.Schema({
         required: true
     },
     phone: String,
-    profession: String
+    profession: {
+        type: String,
+        enum: ["Nurse", "Doctor", "Pharmacist"]
+    }
 });
 
 const User = mongoose.model('User', UserSchema);

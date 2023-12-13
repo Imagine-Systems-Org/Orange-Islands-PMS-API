@@ -49,7 +49,7 @@ router.get('/:patientID', async (request, response) => {
 });
 
 // Create a post
-router.post('/', async (request, response) => {
+router.post('/newpatient', async (request, response) => {
     response.json(await createPatient(request.body.patientDetails));
 });
 

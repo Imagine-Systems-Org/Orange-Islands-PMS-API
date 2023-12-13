@@ -33,9 +33,22 @@ router.get('/:patientrecordID', async (request, response) => {
     response.json(await getPatientRecordById(request.params.patientrecordID));
 });
 
-// Create a post
-router.post('/', async (request, response) => {
-    response.json(await createPatientRecord(request.body.patientRecordDetails));
+// Create a patient record
+router.post('/:patientID', async (request, response) => {
+    let patientRecordDetails = {
+        treatment: request.body.treatment,
+        condition: request.body.condition,
+        nursesNotes: request.body.nursesNotes,
+        annotations: request.body.annotations,
+        daysStayed: request.body.daysStayed,
+        prescriptions: request.body.prescriptions,
+        patient: request.params.patientID
+    }
+    let newPatientRecordDoc = await createPatientRecord(patientRecordDetails);
+
+    response.json({
+        patientrecord: newPatientRecordDoc
+    });
 });
 
 // Update a specific post

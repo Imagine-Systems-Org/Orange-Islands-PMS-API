@@ -14,7 +14,22 @@ async function getPatientRecordByPatient(patientID){
 }
 
 async function createPatientRecord(patientRecordDetails){
-    return await PatientRecord.create(patientRecordDetails);
+
+    // Create new user based on userDetails data
+    let newPatientRecord = new PatientRecord(
+        {
+            treatment: patientRecordDetails.treatment,
+            condition: patientRecordDetails.condition,
+            nursesNotes: patientRecordDetails.nursesNotes,
+            annotations: patientRecordDetails.annotations,
+            daysStayed: patientRecordDetails.daysStayed,
+            prescriptions: patientRecordDetails.prescriptions,
+            patient: patientRecordDetails.patient
+        }
+    )
+    
+    // And save it to DB
+    return await newPatientRecord.save();
 }
 
 async function updatePatientRecord(patientRecordDetails){
