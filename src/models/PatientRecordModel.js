@@ -1,7 +1,10 @@
 const mongoose = require("mongoose");
 
 const PatientRecordSchema = new mongoose.Schema({
-    entryDate: Date,
+    entryDate: {
+        type: Date,
+        default: Date.now
+    },
     treatment: String,
     condition: String,
     nursesNotes: String,

@@ -5,7 +5,13 @@ const router = express.Router();
 
 
 const {
-    getAllPatients, getPatientById, createPatient, updatePatient, deletePatient
+    getAllPatients, 
+    getPatientById, 
+    createPatient, 
+    updatePatient, 
+    deletePatient,
+    getPatientsByDoctor,
+    getPatientsByNurse
 } = require('./PatientFunctions');
 
 // Show all posts
@@ -18,15 +24,24 @@ router.get('/', async (request, response) => {
     });
 });
 
-// // Show posts by specific user
-// router.get('/author/:authorID', async (request, response) => {
-//     let postsByAuthor = await getPostsByAuthor(request.params.authorID);
+// Show posts by specific user
+router.get('/assignedDoctor/:userID', async (request, response) => {
+    let patientsByDoctor = await getPatientsByDoctor(request.params.userID);
 
-//     response.json({
-//         postsCount: postsByAuthor.length,
-//         postsArray: postsByAuthor
-//     });
-// });
+    response.json({
+        patientsCount: patientsByDoctor.length,
+        patientsArray: patientsByDoctor
+    });
+});
+
+router.get('/assignedNurse/:userID', async (request, response) => {
+    let patientsByNurse = await getPatientsByNurse(request.params.userID);
+
+    response.json({
+        patientsCount: patientsByNurse.length,
+        patientsArray: patientsByNurse
+    });
+}); 
 
 // Show specific post by ID
 router.get('/:patientID', async (request, response) => {

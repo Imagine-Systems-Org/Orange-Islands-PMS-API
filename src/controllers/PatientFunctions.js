@@ -9,10 +9,13 @@ async function getPatientById(patientID){
     return await Patient.findById(patientID).exec();
 }
 
-// UNNECESSARY
-// async function getPatientsByTrainer(userID){
-//     return await Post.find({author: userID}).exec();
-// }
+async function getPatientsByDoctor(userID){
+    return await Post.find({assignedDoctor: userID}).exec();
+}
+
+async function getPatientsByNurse(userID){
+    return await Post.find({assignedNurse: userID}).exec();
+}
 
 async function createPatient(patientDetails){
     return await Patient.create(patientDetails);
@@ -21,14 +24,12 @@ async function createPatient(patientDetails){
 async function updatePatient(patientDetails){
     // Find user, update it, return the updated user data.
     return await Patient.findByIdAndUpdate(patientDetails.patientID, patientDetails.updatedData, {returnDocument: 'after'}).exec();
-
 }
 
 async function deletePatient(patientID){
     return await Patient.findByIdAndDelete(patientID).exec();
-
 }
 
 module.exports = {
-    getAllPatients, getPatientById, createPatient, updatePatient, deletePatient
+    getAllPatients, getPatientById, createPatient, updatePatient, deletePatient, getPatientsByDoctor, getPatientsByNurse
 }

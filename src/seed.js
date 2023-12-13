@@ -16,17 +16,84 @@ dotenv.config();
 // obeying the needed fields from the Role schema.
 
 // To fill in after creating user data encryption functionality.
-const users = [
-
+const doctors = [
+    {
+        firstName: "Andrew",
+        lastName: "Montgomery",
+        employeeID: "ND514",
+        email: "Andrew@SunClinic.net",
+        password: "BasketCase",
+        phone: "0461844532",
+        profession: "Doctor"
+    },
+    {
+        firstName: "Christine",
+        lastName: "Wilder",
+        employeeID: "ND398",
+        email: "Christine@SunClinic.net",
+        password: "WaterField",
+        phone: "0431799842",
+        profession: "Doctor"
+    }
 ];
+
+const nurses = [
+    {
+        firstName: "Lucile",
+        lastName: "Bowers",
+        employeeID: "XM514",
+        email: "Lucile@SunClinic.net",
+        password: "CrystalClear",
+        phone: "042211458",
+        profession: "Nurse"
+    },
+    {
+        firstName: "Geoffrey",
+        lastName: "Sanders",
+        employeeID: "XM398",
+        email: "Geoffrey@SunClinic.net",
+        password: "BlackSword",
+        phone: "043315489",
+        profession: "Nurse"
+    }
+]
+
+const pharmacists = [
+    {
+        firstName: "Alec",
+        lastName: "Baldwin",
+        employeeID: "AM453",
+        email: "Alec@SunClinic.net",
+        password: "DarkSword",
+        phone: "042219843",
+        profession: "Pharmacist"
+    }
+]
 
 // To fill in after creating users successfully.
 const patients = [
-
+    {
+    name: "Bubbles",
+    species: "Empathy",
+    category: "Gardevoir",
+    dateOfBirth: 2005-12-11,
+    bed: "12",
+    trainer: [{ 
+        firstName: "William", 
+        lastName: "Bowers", 
+        phone: "026363631" }]
+    }
 ];
 
 const patientrecords = [
-
+    {
+    treatment: "Rest",
+    condition: "Good",
+    nursesNotes: "Monitoring hydrations levels",
+    annotations: "Acute dehydration",
+    daysStayed: 3,
+    prescriptions: "Intravenous Fluids",
+    }
 ];
 
 
@@ -34,10 +101,10 @@ const patientrecords = [
 var databaseURL = "";
 switch (process.env.NODE_ENV.toLowerCase()) {
     case "test":
-        databaseURL = "mongodb://localhost:27017/ExpressBuildAnAPI-test";
+        databaseURL = "mongodb://localhost:27017/orangeislandspms-test";
         break;
     case "development":
-        databaseURL = process.env.DATABSE_URL;
+        databaseURL = process.env.DATABASE_URL;
         break;
     case "production":
         databaseURL = process.env.DB_URI;
@@ -73,10 +140,41 @@ databaseConnector(databaseURL).then(() => {
         console.log("Old DB data deleted.");
     }
 }).then(async () => {
-    // Add new data into the database.
-    await Role.insertMany(roles);
 
-    console.log("New DB data created.");
+    // Iterate through the users array, using for-of to enable async/await.
+    for (const doctor of doctors) {
+        // Set the password of the user.
+        doctor.password = await hashString("password1");
+    }
+    for (const nurse of nurses) {
+        // Set the password of the user.
+        nurse.password = await hashString("password1");
+    }
+    for (const pharmacist of pharmacists) {
+        // Set the password of the user.
+        pharmacist.password = await hashString("password1");
+    }
+    // Save the users to the database.
+    let doctorsCreated = await User.insertMany(doctors);
+    let nursesCreated = await User.insertMany(nurses);
+    let pharmacistsCreated = await User.insertMany(pharmacists);
+
+    // Same again for posts;
+    // pick a random user and assign that user as the author of a post.
+    for (const patient of patients) {
+        patient.assignedDoctor = doctorsCreated[Math.floor(Math.random() * doctorsCreated.length)].id;
+        patient.assignedNurse = nursesCreated[Math.floor(Math.random() * nursesCreated.length)].id;
+    }
+    // Then save the posts to the database.
+    let patientsCreated = await Patient.insertMany(patients);
+
+    for (const record of patientrecords) {
+        record.patient = patientsCreated[Math.floor(Math.random() * patientsCreated.length)].id;
+    }
+
+    let patientrecordsCreated = await PatientRecord.insertMany(patientrecords);
+    // Log modified to list all data created.
+    console.log("New DB data created.\n" + JSON.stringify({doctors: doctorsCreated, nurses: nursesCreated, pharmacists: pharmacistsCreated, patients: patientsCreated, patientrecords: patientrecordsCreated}, null, 4));
 }).then(() => {
     // Disconnect from the database.
     mongoose.connection.close();
