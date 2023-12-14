@@ -11,7 +11,8 @@ const {
     updatePatient, 
     deletePatient,
     getPatientsByDoctor,
-    getPatientsByNurse
+    getPatientsByNurse,
+    createPatientwithDoctorandNurse
 } = require('./PatientFunctions');
 
 // Show all posts
@@ -48,8 +49,21 @@ router.get('/:patientID', async (request, response) => {
     response.json(await getPatientById(request.params.patientID));
 });
 
+router.post('/new', async (request, response) => {
+    let patientDetails = {
+        name: request.body.name,
+        species: request.body.species,
+        category: request.body.category,
+        dateOfBirth: request.body.dateOfBirth,
+        bed: request.body.bed,
+        trainer: request.body.trainer
+    }
+    let newPatientDoc = await createPatient(patientDetails);
+    response.json({patient: newPatientDoc});
+});
+
 // Create a post
-router.post('/newpatient/:assignedDoctor/:assignedNurse', async (request, response) => {
+router.post('/new/doctor/:assignedDoctor/nurse/:assignedNurse', async (request, response) => {
     let patientDetails = {
         name: request.body.name,
         species: request.body.species,
@@ -60,7 +74,7 @@ router.post('/newpatient/:assignedDoctor/:assignedNurse', async (request, respon
         bed: request.body.bed,
         trainer: request.body.trainer
     }
-    let newPatientDoc = await createPatient(patientDetails);
+    let newPatientDoc = await createPatientwithDoctorandNurse(patientDetails);
     response.json({patient: newPatientDoc});
 });
 

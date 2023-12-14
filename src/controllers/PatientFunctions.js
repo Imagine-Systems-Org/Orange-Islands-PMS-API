@@ -24,6 +24,20 @@ async function createPatient(patientDetails){
             species: patientDetails.species,
             category: patientDetails.category,
             dateOfBirth: patientDetails.dateOfBirth,
+            bed: patientDetails.bed,
+            trainer: patientDetails.trainer
+        }
+    )
+    return await newPatient.save();
+}
+
+async function createPatientwithDoctorandNurse(patientDetails){
+    let newPatient = new Patient(
+        {
+            name: patientDetails.name,
+            species: patientDetails.species,
+            category: patientDetails.category,
+            dateOfBirth: patientDetails.dateOfBirth,
             assignedDoctor: patientDetails.assignedDoctor,
             assignedNurse: patientDetails.assignedNurse,
             bed: patientDetails.bed,
@@ -43,5 +57,5 @@ async function deletePatient(patientID){
 }
 
 module.exports = {
-    getAllPatients, getPatientById, createPatient, updatePatient, deletePatient, getPatientsByDoctor, getPatientsByNurse
+    getAllPatients, getPatientById, createPatient, createPatientwithDoctorandNurse, updatePatient, deletePatient, getPatientsByDoctor, getPatientsByNurse
 }
