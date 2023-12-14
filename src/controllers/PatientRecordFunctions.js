@@ -32,9 +32,9 @@ async function createPatientRecord(patientRecordDetails){
     return await newPatientRecord.save();
 }
 
-async function updatePatientRecord(patientRecordDetails){
+async function updatePatientRecord(patientRecordID, patientRecordDetails){
     // Find user, update it, return the updated user data.
-    return await PatientRecord.findByIdAndUpdate(patientRecordDetails.patientrecordID, patientRecordDetails.updatedData, {returnDocument: 'after'}).exec();
+    return await PatientRecord.findByIdAndUpdate(patientRecordID, patientRecordDetails, {returnDocument: 'after'}).exec();
 }
 
 async function deletePatientRecord(patientrecordID){

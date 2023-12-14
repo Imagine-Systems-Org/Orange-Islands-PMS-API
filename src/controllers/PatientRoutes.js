@@ -49,18 +49,27 @@ router.get('/:patientID', async (request, response) => {
 });
 
 // Create a post
-router.post('/newpatient', async (request, response) => {
-    response.json(await createPatient(request.body.patientDetails));
+router.post('/newpatient/:assignedDoctor/:assignedNurse', async (request, response) => {
+    let patientDetails = {
+        name: request.body.name,
+        species: request.body.species,
+        category: request.body.category,
+        dateOfBirth: request.body.dateOfBirth,
+        assignedDoctor: request.params.assignedDoctor,
+        assignedNurse: request.params.assignedNurse,
+        bed: request.body.bed,
+        trainer: request.body.trainer
+    }
+    let newPatientDoc = await createPatient(patientDetails);
+    response.json({patient: newPatientDoc});
 });
 
 // Update a specific post
 router.put('/:patientID', async (request, response) => {
-    let patientDetails = {
-        patientID: request.params.patientID,
-        updatedData: request.body.newPatientData
-    };
+    let patientDetails = request.body;
+    let patientID = request.params.patientID;
 
-    response.json(await updatePatient(patientDetails));
+    response.json(await updatePatient(patientID, patientDetails));
 });
 
 // Delete a specific post

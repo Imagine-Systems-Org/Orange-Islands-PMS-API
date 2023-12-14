@@ -53,12 +53,10 @@ router.post('/:patientID', async (request, response) => {
 
 // Update a specific post
 router.put('/:patientrecordID', async (request, response) => {
-    let patientRecordDetails = {
-        patientrecordID: request.params.patientrecordID,
-        updatedData: request.body.newPatientRecordData
-    };
+    let patientRecordDetails = request.body;
+    let patientRecordID = request.params.patientrecordID;
 
-    response.json(await updatePatientRecord(patientRecordDetails));
+    response.json(await updatePatientRecord(patientRecordID, patientRecordDetails));
 });
 
 // Delete a specific post

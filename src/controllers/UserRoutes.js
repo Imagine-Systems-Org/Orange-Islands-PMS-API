@@ -59,12 +59,10 @@ router.post('/token-refresh', async(request, response) => {
 
 // Update a user
 router.put('/:userID', async (request, response) => {
-    let userDetails = {
-        userID: request.params.userID,
-        updatedData: request.body.newUserData
-    };
+    let userDetails = request.body;
+    let userID = request.params.userID;
 
-    response.json(await updateUser(userDetails));
+    response.json(await updateUser(userID, userDetails));
 });
 
 // Delete a user

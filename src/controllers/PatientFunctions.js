@@ -18,12 +18,24 @@ async function getPatientsByNurse(userID){
 }
 
 async function createPatient(patientDetails){
-    return await Patient.create(patientDetails);
+    let newPatient = new Patient(
+        {
+            name: patientDetails.name,
+            species: patientDetails.species,
+            category: patientDetails.category,
+            dateOfBirth: patientDetails.dateOfBirth,
+            assignedDoctor: patientDetails.assignedDoctor,
+            assignedNurse: patientDetails.assignedNurse,
+            bed: patientDetails.bed,
+            trainer: patientDetails.trainer
+        }
+    )
+    return await newPatient.save();
 }
 
-async function updatePatient(patientDetails){
+async function updatePatient(patientID, patientDetails){
     // Find user, update it, return the updated user data.
-    return await Patient.findByIdAndUpdate(patientDetails.patientID, patientDetails.updatedData, {returnDocument: 'after'}).exec();
+    return await Patient.findByIdAndUpdate(patientID, patientDetails, {returnDocument: 'after'}).exec();
 }
 
 async function deletePatient(patientID){
