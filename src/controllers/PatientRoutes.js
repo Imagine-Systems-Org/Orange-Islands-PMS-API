@@ -63,7 +63,8 @@ router.post('/new', async (request, response) => {
 });
 
 // Create a post
-router.post('/new/doctor/:assignedDoctor/nurse/:assignedNurse', async (request, response) => {
+router.post('/new/doctor/:assignedDoctor/nurse/:assignedNurse', 
+async (request, response) => {
     let patientDetails = {
         name: request.body.name,
         species: request.body.species,

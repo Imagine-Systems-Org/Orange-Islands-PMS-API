@@ -57,5 +57,12 @@ async function deletePatient(patientID){
 }
 
 module.exports = {
-    getAllPatients, getPatientById, createPatient, createPatientwithDoctorandNurse, updatePatient, deletePatient, getPatientsByDoctor, getPatientsByNurse
+    getAllPatients, 
+    getPatientById, 
+    createPatient, 
+    createPatientwithDoctorandNurse, 
+    updatePatient, 
+    deletePatient, 
+    getPatientsByDoctor, 
+    getPatientsByNurse
 }
