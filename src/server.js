@@ -42,7 +42,7 @@ app.use((req, res, next) => {
     next()
   })
 var corsOptions = {
-    origin: ["http://127.0.0.1:5173", "https://deployedApp.com"],
+    origin: ["http://127.0.0.1:5173", "http://localhost:5173/", "https://deployedApp.com"],
     optionsSuccessStatus: 200
 }
 app.use(cors(corsOptions));
