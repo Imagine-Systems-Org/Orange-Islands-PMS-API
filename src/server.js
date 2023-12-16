@@ -26,26 +26,22 @@ app.use(helmet.contentSecurityPolicy({
 // that should interact with this API should be listed in the 
 // array of origins for CORS configuration.
 const cors = require('cors');
-// app.use((req, res, next) => {
-//     res.header("Access-Control-Allow-Origin", "*")
-//     res.header(
-//       "Access-Control-Allow-Headers",
-//       "Origin, X-Requested, Content-Type, Accept Authorization"
-//     )
-//     if (req.method === "OPTIONS") {
-//       res.header(
-//         "Access-Control-Allow-Methods",
-//         "POST, PUT, PATCH, GET, DELETE"
-//       )
-//       return res.status(200).json({})
-//     }
-//     next()
-//   })
-var corsOptions = {
-    origin: ["http://127.0.0.1:5173", "http://localhost:5173", "https://deployedApp.com"],
-    optionsSuccessStatus: 200
-}
-app.use(cors(corsOptions));
+app.use((req, res, next) => {
+    res.header("Access-Control-Allow-Origin", "*")
+    res.header(
+      "Access-Control-Allow-Headers",
+      "Origin, X-Requested, Content-Type, Accept Authorization"
+    )
+    if (req.method === "OPTIONS") {
+      res.header(
+        "Access-Control-Allow-Methods",
+        "POST, PUT, PATCH, GET, DELETE"
+      )
+      return res.status(200).json({})
+    }
+    next()
+  })
+app.use(cors({ origin: ["http://127.0.0.1:5173", "http://localhost:5173", "https://deployedApp.com"], credentials: true }));
 
 // Configure some API-friendly request data formatting.
 app.use(express.json());
