@@ -7,6 +7,7 @@ const router = express.Router();
 const {
     getAllPatients, 
     getPatientById, 
+    getPatientbyName,
     createPatient, 
     updatePatient, 
     deletePatient,
@@ -47,6 +48,10 @@ router.get('/assignedNurse/:userID', async (request, response) => {
 // Show specific post by ID
 router.get('/:patientID', async (request, response) => {
     response.json(await getPatientById(request.params.patientID));
+});
+
+router.get('/:patientName', async (request, response) => {
+    response.json(await getPatientByName(request.params.patientID));
 });
 
 router.post('/new', async (request, response) => {

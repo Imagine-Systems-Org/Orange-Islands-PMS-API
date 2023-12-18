@@ -9,6 +9,10 @@ async function getPatientById(patientID){
     return await Patient.findById(patientID).exec();
 }
 
+async function getPatientByName(patientName){
+    return await Patient.findById(patientName).exec();
+}
+
 async function getPatientsByDoctor(userID){
     return await Patient.find({assignedDoctor: userID}).exec();
 }
@@ -59,6 +63,7 @@ async function deletePatient(patientID){
 module.exports = {
     getAllPatients, 
     getPatientById, 
+    getPatientbyName,
     createPatient, 
     createPatientwithDoctorandNurse, 
     updatePatient, 
