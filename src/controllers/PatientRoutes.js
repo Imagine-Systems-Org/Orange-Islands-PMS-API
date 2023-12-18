@@ -56,7 +56,8 @@ router.post('/new', async (request, response) => {
         category: request.body.category,
         dateOfBirth: request.body.dateOfBirth,
         bed: request.body.bed,
-        trainer: request.body.trainer
+        trainerName: request.body.trainerName,
+        trainerPhone: request.body.trainerPhone
     }
     let newPatientDoc = await createPatient(patientDetails);
     response.json({patient: newPatientDoc});
@@ -73,7 +74,8 @@ async (request, response) => {
         assignedDoctor: request.params.assignedDoctor,
         assignedNurse: request.params.assignedNurse,
         bed: request.body.bed,
-        trainer: request.body.trainer
+        trainerName: request.body.trainerName,
+        trainerPhone: request.body.trainerPhone
     }
     let newPatientDoc = await createPatientwithDoctorandNurse(patientDetails);
     response.json({patient: newPatientDoc});

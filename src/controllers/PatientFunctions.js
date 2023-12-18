@@ -29,7 +29,8 @@ async function createPatient(patientDetails){
             category: patientDetails.category,
             dateOfBirth: patientDetails.dateOfBirth,
             bed: patientDetails.bed,
-            trainer: patientDetails.trainer
+            trainerName: patientDetails.trainerName,
+            trainerPhone: patientDetails.trainerPhone
         }
     )
     return await newPatient.save();
@@ -45,7 +46,8 @@ async function createPatientwithDoctorandNurse(patientDetails){
             assignedDoctor: patientDetails.assignedDoctor,
             assignedNurse: patientDetails.assignedNurse,
             bed: patientDetails.bed,
-            trainer: patientDetails.trainer
+            trainerName: patientDetails.trainerName,
+            trainerPhone: patientDetails.trainerPhone
         }
     )
     return await newPatient.save();

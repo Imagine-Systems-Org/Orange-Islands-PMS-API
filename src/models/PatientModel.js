@@ -8,10 +8,8 @@ const PatientSchema = new mongoose.Schema({
     assignedDoctor: {type: mongoose.Types.ObjectId, ref: 'User'},
     assignedNurse: {type: mongoose.Types.ObjectId, ref: 'User'},
     bed: String,
-    trainer: [{ 
-        firstName: String, 
-        lastName: String, 
-        phone: String }]
+    trainerName: String,
+    trainerPhone: String
 });
 
 const Patient = mongoose.model('Patient', PatientSchema);
