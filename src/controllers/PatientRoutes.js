@@ -7,7 +7,7 @@ const router = express.Router();
 const {
     getAllPatients, 
     getPatientById, 
-    getPatientbyName,
+    getPatientByName,
     createPatient, 
     updatePatient, 
     deletePatient,
