@@ -21,8 +21,7 @@ router.get('/', async (request, response) => {
     let allPatients = await getAllPatients();
 
     response.json({
-        patientsCount: allPatients.length,
-        patientsArray: allPatients
+        allPatients
     });
 });
 
