@@ -18,8 +18,7 @@ const {
 
 // Show all posts
 router.get('/', async (request, response) => {
-    let allPatients = await getAllPatients();
-    response.json();
+    response.json(await getAllPatients());
 });
 
 // Show posts by specific user
