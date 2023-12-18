@@ -74,14 +74,21 @@ const pharmacists = [
 const patients = [
     {
     name: "Bubbles",
-    species: "Empathy",
-    category: "Gardevoir",
+    species: "Gardevoir",
+    category: "Empathy",
     dateOfBirth: "2005-12-11",
     bed: "12",
-    trainer: [{ 
-        firstName: "William", 
-        lastName: "Bowers", 
-        phone: "026363631" }]
+    trainerName: "William Bowers",
+    trainerPhone: "026363631"
+    },
+    {
+    name: "Wittaker",
+    species: "Bulbasaur",
+    category: "Seed",
+    dateOfBirth: "2005-12-11",
+    bed: "12",
+    trainerName: "William Bowers",
+    trainerPhone: "026363631"
     }
 ];
 
