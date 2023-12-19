@@ -262,350 +262,350 @@ const patientrecords = [{
     "nursesNotes": "Patient complains of mild headache.",
     "annotations": "F/U",
     "daysStayed": 35,
-    "precriptions": "Amoxicillin"
+    "prescriptions": "Amoxicillin"
   }, {
     "treatment": "radiation",
     "condition": "Critical",
     "nursesNotes": "Patient complains of mild headache.",
     "annotations": "PE",
     "daysStayed": 35,
-    "precriptions": "Lisinopril"
+    "prescriptions": "Lisinopril"
   }, {
     "treatment": "therapy",
     "condition": "Serious",
     "nursesNotes": "Patient complains of mild headache.",
     "annotations": "PE",
     "daysStayed": 198,
-    "precriptions": "Lisinopril"
+    "prescriptions": "Lisinopril"
   }, {
     "treatment": "radiation",
     "condition": "Fair",
     "nursesNotes": "Patient reports feeling fatigued.",
     "annotations": "VS",
     "daysStayed": 136,
-    "precriptions": "Atorvastatin"
+    "prescriptions": "Atorvastatin"
   }, {
     "treatment": "physical therapy",
     "condition": "Undetermined",
     "nursesNotes": "Patient is experiencing pain in the abdomen.",
     "annotations": "SH",
     "daysStayed": 187,
-    "precriptions": "Warfarin"
+    "prescriptions": "Warfarin"
   }, {
     "treatment": "therapy",
     "condition": "Undetermined",
     "nursesNotes": "Patient's vital signs are stable.",
     "annotations": "Dx",
     "daysStayed": 55,
-    "precriptions": "Metformin"
+    "prescriptions": "Metformin"
   }, {
     "treatment": "surgery",
     "condition": "Good",
     "nursesNotes": "Patient appears to be in good health.",
     "annotations": "HPI",
     "daysStayed": 63,
-    "precriptions": "Loratadine"
+    "prescriptions": "Loratadine"
   }, {
     "treatment": "radiation",
     "condition": "Fair",
     "nursesNotes": "Patient is experiencing pain in the abdomen.",
     "annotations": "PE",
     "daysStayed": 40,
-    "precriptions": "Lisinopril"
+    "prescriptions": "Lisinopril"
   }, {
     "treatment": "medication",
     "condition": "Good",
     "nursesNotes": "Patient's vital signs are stable.",
     "annotations": "DDx",
     "daysStayed": 172,
-    "precriptions": "Amoxicillin"
+    "prescriptions": "Amoxicillin"
   }, {
     "treatment": "therapy",
     "condition": "Critical",
     "nursesNotes": "Patient appears to be in good health.",
     "annotations": "ROS",
     "daysStayed": 155,
-    "precriptions": "Ibuprofen"
+    "prescriptions": "Ibuprofen"
   }, {
     "treatment": "therapy",
     "condition": "Good",
     "nursesNotes": "Patient appears to be in good health.",
     "annotations": "VS",
     "daysStayed": 49,
-    "precriptions": "Warfarin"
+    "prescriptions": "Warfarin"
   }, {
     "treatment": "therapy",
     "condition": "Undetermined",
     "nursesNotes": "Patient is experiencing pain in the abdomen.",
     "annotations": "DDx",
     "daysStayed": 198,
-    "precriptions": "Omeprazole"
+    "prescriptions": "Omeprazole"
   }, {
     "treatment": "physical therapy",
     "condition": "Undetermined",
     "nursesNotes": "Patient is experiencing pain in the abdomen.",
     "annotations": "Tx",
     "daysStayed": 65,
-    "precriptions": "Lisinopril"
+    "prescriptions": "Lisinopril"
   }, {
     "treatment": "radiation",
     "condition": "Fair",
     "nursesNotes": "Patient is experiencing pain in the abdomen.",
     "annotations": "SH",
     "daysStayed": 99,
-    "precriptions": "Albuterol inhaler"
+    "prescriptions": "Albuterol inhaler"
   }, {
     "treatment": "medication",
     "condition": "Good",
     "nursesNotes": "Patient is experiencing pain in the abdomen.",
     "annotations": "HPI",
     "daysStayed": 141,
-    "precriptions": "Insulin glargine"
+    "prescriptions": "Insulin glargine"
   }, {
     "treatment": "medication",
     "condition": "Serious",
     "nursesNotes": "Patient complains of mild headache.",
     "annotations": "HPI",
     "daysStayed": 91,
-    "precriptions": "Albuterol inhaler"
+    "prescriptions": "Albuterol inhaler"
   }, {
     "treatment": "medication",
     "condition": "Undetermined",
     "nursesNotes": "Patient's vital signs are stable.",
     "annotations": "Rx",
     "daysStayed": 14,
-    "precriptions": "Insulin glargine"
+    "prescriptions": "Insulin glargine"
   }, {
     "treatment": "medication",
     "condition": "Serious",
     "nursesNotes": "Patient appears to be in good health.",
     "annotations": "POC",
     "daysStayed": 179,
-    "precriptions": "Lisinopril"
+    "prescriptions": "Lisinopril"
   }, {
     "treatment": "physical therapy",
     "condition": "Fair",
     "nursesNotes": "Patient reports feeling fatigued.",
     "annotations": "LMP",
     "daysStayed": 150,
-    "precriptions": "Amoxicillin"
+    "prescriptions": "Amoxicillin"
   }, {
     "treatment": "radiation",
     "condition": "Undetermined",
     "nursesNotes": "Patient is experiencing pain in the abdomen.",
     "annotations": "Tx",
     "daysStayed": 178,
-    "precriptions": "Ciprofloxacin"
+    "prescriptions": "Ciprofloxacin"
   }, {
     "treatment": "radiation",
     "condition": "Fair",
     "nursesNotes": "Patient complains of mild headache.",
     "annotations": "HPI",
     "daysStayed": 184,
-    "precriptions": "Amoxicillin"
+    "prescriptions": "Amoxicillin"
   }, {
     "treatment": "medication",
     "condition": "Good",
     "nursesNotes": "Patient is experiencing pain in the abdomen.",
     "annotations": "LMP",
     "daysStayed": 60,
-    "precriptions": "HCTZ (Hydrochlorothiazide)"
+    "prescriptions": "HCTZ (Hydrochlorothiazide)"
   }, {
     "treatment": "therapy",
     "condition": "Fair",
     "nursesNotes": "Patient appears to be in good health.",
     "annotations": "DDx",
     "daysStayed": 6,
-    "precriptions": "HCTZ (Hydrochlorothiazide)"
+    "prescriptions": "HCTZ (Hydrochlorothiazide)"
   }, {
     "treatment": "radiation",
     "condition": "Good",
     "nursesNotes": "Patient's vital signs are stable.",
     "annotations": "PMH",
     "daysStayed": 92,
-    "precriptions": "Metformin"
+    "prescriptions": "Metformin"
   }, {
     "treatment": "surgery",
     "condition": "Fair",
     "nursesNotes": "Patient appears to be in good health.",
     "annotations": "DDx",
     "daysStayed": 161,
-    "precriptions": "Sertraline"
+    "prescriptions": "Sertraline"
   }, {
     "treatment": "therapy",
     "condition": "Serious",
     "nursesNotes": "Patient's vital signs are stable.",
     "annotations": "ROS",
     "daysStayed": 74,
-    "precriptions": "Ibuprofen"
+    "prescriptions": "Ibuprofen"
   }, {
     "treatment": "radiation",
     "condition": "Good",
     "nursesNotes": "Patient reports feeling fatigued.",
     "annotations": "SH",
     "daysStayed": 124,
-    "precriptions": "Prednisone"
+    "prescriptions": "Prednisone"
   }, {
     "treatment": "medication",
     "condition": "Undetermined",
     "nursesNotes": "Patient appears to be in good health.",
     "annotations": "ROS",
     "daysStayed": 160,
-    "precriptions": "Sertraline"
+    "prescriptions": "Sertraline"
   }, {
     "treatment": "therapy",
     "condition": "Undetermined",
     "nursesNotes": "Patient's vital signs are stable.",
     "annotations": "HPI",
     "daysStayed": 172,
-    "precriptions": "Prednisone"
+    "prescriptions": "Prednisone"
   }, {
     "treatment": "surgery",
     "condition": "Critical",
     "nursesNotes": "Patient is experiencing pain in the abdomen.",
     "annotations": "DDx",
     "daysStayed": 162,
-    "precriptions": "Atorvastatin"
+    "prescriptions": "Atorvastatin"
   }, {
     "treatment": "medication",
     "condition": "Serious",
     "nursesNotes": "Patient complains of mild headache.",
     "annotations": "HPI",
     "daysStayed": 178,
-    "precriptions": "Warfarin"
+    "prescriptions": "Warfarin"
   }, {
     "treatment": "medication",
     "condition": "Undetermined",
     "nursesNotes": "Patient complains of mild headache.",
     "annotations": "HPI",
     "daysStayed": 138,
-    "precriptions": "Acetaminophen"
+    "prescriptions": "Acetaminophen"
   }, {
     "treatment": "therapy",
     "condition": "Fair",
     "nursesNotes": "Patient appears to be in good health.",
     "annotations": "PE",
     "daysStayed": 98,
-    "precriptions": "HCTZ (Hydrochlorothiazide)"
+    "prescriptions": "HCTZ (Hydrochlorothiazide)"
   }, {
     "treatment": "surgery",
     "condition": "Fair",
     "nursesNotes": "Patient appears to be in good health.",
     "annotations": "CC",
     "daysStayed": 60,
-    "precriptions": "Loratadine"
+    "prescriptions": "Loratadine"
   }, {
     "treatment": "therapy",
     "condition": "Serious",
     "nursesNotes": "Patient complains of mild headache.",
     "annotations": "CC",
     "daysStayed": 181,
-    "precriptions": "Prednisone"
+    "prescriptions": "Prednisone"
   }, {
     "treatment": "therapy",
     "condition": "Critical",
     "nursesNotes": "Patient appears to be in good health.",
     "annotations": "F/U",
     "daysStayed": 7,
-    "precriptions": "Insulin glargine"
+    "prescriptions": "Insulin glargine"
   }, {
     "treatment": "medication",
     "condition": "Serious",
     "nursesNotes": "Patient appears to be in good health.",
     "annotations": "F/U",
     "daysStayed": 200,
-    "precriptions": "Loratadine"
+    "prescriptions": "Loratadine"
   }, {
     "treatment": "medication",
     "condition": "Critical",
     "nursesNotes": "Patient is experiencing pain in the abdomen.",
     "annotations": "ROS",
     "daysStayed": 198,
-    "precriptions": "Atorvastatin"
+    "prescriptions": "Atorvastatin"
   }, {
     "treatment": "medication",
     "condition": "Critical",
     "nursesNotes": "Patient is experiencing pain in the abdomen.",
     "annotations": "POC",
     "daysStayed": 35,
-    "precriptions": "Prednisone"
+    "prescriptions": "Prednisone"
   }, {
     "treatment": "medication",
     "condition": "Undetermined",
     "nursesNotes": "Patient reports feeling fatigued.",
     "annotations": "CC",
     "daysStayed": 84,
-    "precriptions": "Prednisone"
+    "prescriptions": "Prednisone"
   }, {
     "treatment": "surgery",
     "condition": "Good",
     "nursesNotes": "Patient's vital signs are stable.",
     "annotations": "SH",
     "daysStayed": 105,
-    "precriptions": "Atorvastatin"
+    "prescriptions": "Atorvastatin"
   }, {
     "treatment": "medication",
     "condition": "Serious",
     "nursesNotes": "Patient's vital signs are stable.",
     "annotations": "FH",
     "daysStayed": 157,
-    "precriptions": "Acetaminophen"
+    "prescriptions": "Acetaminophen"
   }, {
     "treatment": "therapy",
     "condition": "Undetermined",
     "nursesNotes": "Patient is experiencing pain in the abdomen.",
     "annotations": "LMP",
     "daysStayed": 119,
-    "precriptions": "Acetaminophen"
+    "prescriptions": "Acetaminophen"
   }, {
     "treatment": "therapy",
     "condition": "Undetermined",
     "nursesNotes": "Patient's vital signs are stable.",
     "annotations": "SH",
     "daysStayed": 115,
-    "precriptions": "Amoxicillin"
+    "prescriptions": "Amoxicillin"
   }, {
     "treatment": "radiation",
     "condition": "Serious",
     "nursesNotes": "Patient appears to be in good health.",
     "annotations": "PMH",
     "daysStayed": 101,
-    "precriptions": "Ibuprofen"
+    "prescriptions": "Ibuprofen"
   }, {
     "treatment": "therapy",
     "condition": "Critical",
     "nursesNotes": "Patient reports feeling fatigued.",
     "annotations": "LMP",
     "daysStayed": 139,
-    "precriptions": "Omeprazole"
+    "prescriptions": "Omeprazole"
   }, {
     "treatment": "physical therapy",
     "condition": "Good",
     "nursesNotes": "Patient reports feeling fatigued.",
     "annotations": "POC",
     "daysStayed": 70,
-    "precriptions": "HCTZ (Hydrochlorothiazide)"
+    "prescriptions": "HCTZ (Hydrochlorothiazide)"
   }, {
     "treatment": "surgery",
     "condition": "Serious",
     "nursesNotes": "Patient's vital signs are stable.",
     "annotations": "FH",
     "daysStayed": 90,
-    "precriptions": "Lisinopril"
+    "prescriptions": "Lisinopril"
   }, {
     "treatment": "therapy",
     "condition": "Good",
     "nursesNotes": "Patient complains of mild headache.",
     "annotations": "FH",
     "daysStayed": 61,
-    "precriptions": "Ibuprofen"
+    "prescriptions": "Ibuprofen"
   }, {
     "treatment": "medication",
     "condition": "Good",
     "nursesNotes": "Patient appears to be in good health.",
     "annotations": "Dx",
     "daysStayed": 10,
-    "precriptions": "Lisinopril"
+    "prescriptions": "Lisinopril"
   }]
 
 
