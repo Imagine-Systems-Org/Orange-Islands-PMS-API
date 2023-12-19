@@ -235,6 +235,24 @@ const patients = [{
     "bed": 1,
     "trainerName": "Justin Troy",
     "trainerPhone": "7889620315"
+  }, {
+    "_id": "657a56b90b66096d5a6ca134",
+    "name": "Bubbles",
+    "species": "Empathy",
+    "category": "Gardevoir",
+    "dateOfBirth": "2005-12-11T00:00:00.000Z",
+    "bed": "12",
+    "trainerName": "William Bowers",
+    "trainerPhone": "026363631"
+  }, {
+    "_id": "657a56c6fe22b20132604808",
+    "name": "Kringo",
+    "species": "Clefairy",
+    "category": "Fairy",
+    "dateOfBirth": "1992-03-29T00:00:00.000Z",
+    "bed": "5",
+    "trainerName": "Billy McNab",
+    "trainerPhone": "0238945678"
   }]
   
 
