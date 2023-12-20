@@ -81,7 +81,7 @@ router.get('/', async (request, response) => {
 });
 
 // Show a specific user
-router.get('/:employeeID', async (request, response) => {
+router.get('employees/:employeeID', async (request, response) => {
     response.json(await getSpecificUser(request.params.employeeID));
 });
 
