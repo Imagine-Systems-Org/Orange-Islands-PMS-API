@@ -23,21 +23,11 @@ router.get('/', async (request, response) => {
 
 // Show posts by specific user
 router.get('/assignedDoctor/:userID', async (request, response) => {
-    let patientsByDoctor = await getPatientsByDoctor(request.params.userID);
-
-    response.json({
-        patientsCount: patientsByDoctor.length,
-        patientsArray: patientsByDoctor
-    });
+    response.json(await getPatientsByDoctor(request.params.userID));
 });
 
 router.get('/assignedNurse/:userID', async (request, response) => {
-    let patientsByNurse = await getPatientsByNurse(request.params.userID);
-
-    response.json({
-        patientsCount: patientsByNurse.length,
-        patientsArray: patientsByNurse
-    });
+    response.json(await getPatientsByNurse(request.params.userID));
 }); 
 
 // Show specific post by ID
