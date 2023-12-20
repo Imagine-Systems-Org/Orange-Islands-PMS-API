@@ -87,7 +87,7 @@ router.get('/employees/:employeeID', async (request, response) => {
 
 // Show a specific user
 router.get('/:userID', async (request, response) => {
-    response.json(await getSpecificUserId(request.params.userID));
+    response.json(await getSpecificUserById(request.params.userID));
 });
 
 // Export the router so that other files can use it:
