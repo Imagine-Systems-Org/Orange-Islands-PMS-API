@@ -10,7 +10,7 @@ async function getPatientById(patientID){
 }
 
 async function getPatientByName(patientName){
-    return await Patient.findById(patientName).exec();
+    return await Patient.find({name: patientName}).exec();
 }
 
 async function getPatientsByDoctor(userID){

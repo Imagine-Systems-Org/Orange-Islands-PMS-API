@@ -46,7 +46,7 @@ router.get('/:patientID', async (request, response) => {
 });
 
 router.get('/:patientName', async (request, response) => {
-    response.json(await getPatientByName(request.params.patientID));
+    response.json(await getPatientByName(request.params.patientName));
 });
 
 router.post('/new', async (request, response) => {
