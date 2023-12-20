@@ -8,7 +8,7 @@ const { User } = require('../models/UserModel');
 const {
     encryptString, decryptString, decryptObject, hashString, validateHashedData, 
     generateJWT, generateUserJWT, verifyUserJWT, 
-    getAllUsers, getSpecificUser, createUser, updateUser, deleteUser
+    getAllUsers, getSpecificUser, createUser, updateUser, deleteUser, getSpecificUserById
 } = require('./UserFunctions');
 
 // Sign-up a new user
@@ -83,6 +83,11 @@ router.get('/', async (request, response) => {
 // Show a specific user
 router.get('/employees/:employeeID', async (request, response) => {
     response.json(await getSpecificUser(request.params.employeeID));
+});
+
+// Show a specific user
+router.get('/:userID', async (request, response) => {
+    response.json(await getSpecificUserId(request.params.userID));
 });
 
 // Export the router so that other files can use it:

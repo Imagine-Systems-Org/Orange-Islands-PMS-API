@@ -100,6 +100,10 @@ async function getSpecificUser(employeeID){
     // Returns the raw MongoDB database document.
     return await User.find({employeeID: employeeID});
 }
+async function getSpecificUserById(userID){
+    // Returns the raw MongoDB database document.
+    return await User.findById(userID);
+}
 
 async function createUser(userDetails){
 
@@ -141,5 +145,5 @@ async function deleteUser(userID){
 module.exports = {
     encryptString, decryptString, decryptObject, hashString, validateHashedData, 
     generateJWT, generateUserJWT, verifyUserJWT, 
-    getAllUsers, getSpecificUser, createUser, updateUser, deleteUser
+    getAllUsers, getSpecificUser, createUser, updateUser, deleteUser, getSpecificUserById
 }
