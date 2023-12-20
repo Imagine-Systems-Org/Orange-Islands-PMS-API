@@ -96,9 +96,9 @@ async function getAllUsers(){
 
 }
 
-async function getSpecificUser(userID){
+async function getSpecificUser(employeeID){
     // Returns the raw MongoDB database document.
-    return await User.findById(userID);
+    return await User.find({employeeID: employeeID});
 }
 
 async function createUser(userDetails){
