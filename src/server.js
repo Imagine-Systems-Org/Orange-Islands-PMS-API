@@ -27,7 +27,7 @@ app.use(helmet.contentSecurityPolicy({
 // array of origins for CORS configuration.
 const cors = require('cors');
 var corsOptions = {
-    origin: ["http://127.0.0.1:5173", "http://localhost:5173", "https://deployedApp.com"],
+    origin: ["http://127.0.0.1:5173", "http://localhost:5173", "https://deployedApp.com", "http://127.0.0.1:5173/patients/assignedDoctor/undefined", "http://localhost:5173/patients/assignedDoctor/undefined"],
     optionsSuccessStatus: 200
 }
 app.use(cors(corsOptions));
