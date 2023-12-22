@@ -8,7 +8,8 @@ const { User } = require('../models/UserModel');
 const {
     encryptString, decryptString, decryptObject, hashString, validateHashedData, 
     generateJWT, generateUserJWT, verifyUserJWT, 
-    getAllUsers, getSpecificUser, createUser, updateUser, deleteUser, getSpecificUserById
+    getAllUsers, getSpecificUser, createUser, updateUser, deleteUser, getSpecificUserById,
+    getAllDoctors, getAllNurses
 } = require('./UserFunctions');
 
 // Sign-up a new user
@@ -78,6 +79,16 @@ router.get('/', async (request, response) => {
         userCount: allUsers.length,
         usersArray: allUsers
     });
+});
+
+// Get all Doctors
+router.get('/doctors', async (request, response) => {
+    response.json( await getAllDoctors());
+});
+
+// Get all Nurses
+router.get('/nurses', async (request, response) => {
+    response.json( await getAllNurses());
 });
 
 // Show a specific user

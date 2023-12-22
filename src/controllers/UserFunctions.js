@@ -93,7 +93,14 @@ async function verifyUserJWT(userJWT){
 async function getAllUsers(){
     // Returns an array of raw MongoDB database documents.
     return await User.find({});
+}
 
+async function getAllDoctors() {
+    return await User.find({profession: "Doctor"})
+}
+
+async function getAllNurses() {
+    return await User.find({profession: "Nurse"})
 }
 
 async function getSpecificUser(employeeID){
@@ -145,5 +152,6 @@ async function deleteUser(userID){
 module.exports = {
     encryptString, decryptString, decryptObject, hashString, validateHashedData, 
     generateJWT, generateUserJWT, verifyUserJWT, 
-    getAllUsers, getSpecificUser, createUser, updateUser, deleteUser, getSpecificUserById
+    getAllUsers, getSpecificUser, createUser, updateUser, deleteUser, getSpecificUserById,
+    getAllDoctors, getAllNurses
 }
