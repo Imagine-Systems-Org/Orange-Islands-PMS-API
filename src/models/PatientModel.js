@@ -5,6 +5,7 @@ const PatientSchema = new mongoose.Schema({
     species: String,
     category: String,
     dateOfBirth: Date,
+    allergies: String,
     assignedDoctor: {type: mongoose.Types.ObjectId, ref: 'User'},
     assignedNurse: {type: mongoose.Types.ObjectId, ref: 'User'},
     bed: String,

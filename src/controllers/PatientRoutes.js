@@ -8,7 +8,6 @@ const {
     getAllPatients, 
     getPatientById, 
     getPatientByName,
-    createPatient, 
     updatePatient, 
     deletePatient,
     getPatientsByDoctor,
@@ -39,20 +38,6 @@ router.get('/:patientName', async (request, response) => {
     response.json(await getPatientByName(request.params.patientName));
 });
 
-router.post('/new', async (request, response) => {
-    let patientDetails = {
-        name: request.body.name,
-        species: request.body.species,
-        category: request.body.category,
-        dateOfBirth: request.body.dateOfBirth,
-        bed: request.body.bed,
-        trainerName: request.body.trainerName,
-        trainerPhone: request.body.trainerPhone
-    }
-    let newPatientDoc = await createPatient(patientDetails);
-    response.json({patient: newPatientDoc});
-});
-
 // Create a post
 router.post('/new/doctor/:assignedDoctor/nurse/:assignedNurse', 
 async (request, response) => {
@@ -61,6 +46,7 @@ async (request, response) => {
         species: request.body.species,
         category: request.body.category,
         dateOfBirth: request.body.dateOfBirth,
+        allergies: request.body.allergies,
         assignedDoctor: request.params.assignedDoctor,
         assignedNurse: request.params.assignedNurse,
         bed: request.body.bed,

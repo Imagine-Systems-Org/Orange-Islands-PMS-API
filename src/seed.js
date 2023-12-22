@@ -116,144 +116,142 @@ const pharmacists = [{
 
 // To fill in after creating users successfully.
 const patients = [{
-    "name": "Rocky",
-    "species": "Gyarados",
-    "category": "Dragon",
-    "dateOfBirth": "1971-09-19",
-    "bed": 12,
-    "trainerName": "Iorgo Wallwood",
-    "trainerPhone": "7431435746"
-  }, {
-    "name": "Oscar",
-    "species": "Mew",
-    "category": "Ghost",
-    "dateOfBirth": "1956-06-03",
-    "bed": 10,
-    "trainerName": "Helsa Bellini",
-    "trainerPhone": "4196237382"
-  }, {
-    "name": "Sparky",
-    "species": "Machamp",
-    "category": "Poison",
-    "dateOfBirth": "1950-05-20",
-    "bed": 6,
-    "trainerName": "Kelcy Crothers",
-    "trainerPhone": "4956650417"
-  }, {
-    "name": "Oscar",
-    "species": "Arcanine",
-    "category": "Poison",
-    "dateOfBirth": "1997-01-05",
-    "bed": 3,
-    "trainerName": "Chaddie Yacob",
-    "trainerPhone": "7202835747"
-  }, {
-    "name": "Oscar",
-    "species": "Jolteon",
-    "category": "Ice",
-    "dateOfBirth": "1997-08-18",
-    "bed": 2,
-    "trainerName": "Pate Gyse",
-    "trainerPhone": "6018159858"
-  }, {
-    "name": "Rocky",
-    "species": "Gyarados",
-    "category": "Ice",
-    "dateOfBirth": "2000-08-23",
-    "bed": 15,
-    "trainerName": "Olly Wahlberg",
-    "trainerPhone": "2916946897"
-  }, {
-    "name": "Coco",
-    "species": "Mewtwo",
-    "category": "Flying",
-    "dateOfBirth": "1997-04-27",
-    "bed": 8,
-    "trainerName": "Cathy McMarquis",
-    "trainerPhone": "8403161011"
-  }, {
-    "name": "Milo",
-    "species": "Flareon",
-    "category": "Grass",
-    "dateOfBirth": "1986-12-31",
-    "bed": 5,
-    "trainerName": "Ulrick Kerne",
-    "trainerPhone": "9621869748"
-  }, {
-    "name": "Charlie",
-    "species": "Charizard",
-    "category": "Electric",
-    "dateOfBirth": "1956-06-08",
-    "bed": 12,
-    "trainerName": "Abigael Denecamp",
-    "trainerPhone": "8859779326"
-  }, {
-    "name": "Max",
-    "species": "Alakazam",
-    "category": "Ghost",
-    "dateOfBirth": "2002-06-13",
-    "bed": 6,
-    "trainerName": "Marietta Eakens",
-    "trainerPhone": "9804416335"
-  }, {
-    "name": "Coco",
-    "species": "Mew",
-    "category": "Bug",
-    "dateOfBirth": "1984-03-13",
-    "bed": 4,
-    "trainerName": "Samantha Caught",
-    "trainerPhone": "4169539341"
-  }, {
-    "name": "Coco",
-    "species": "Charizard",
-    "category": "Poison",
-    "dateOfBirth": "1952-11-12",
-    "bed": 15,
-    "trainerName": "Merilyn Kindon",
-    "trainerPhone": "2375958037"
-  }, {
-    "name": "Coco",
-    "species": "Jolteon",
-    "category": "Grass",
-    "dateOfBirth": "1997-01-30",
-    "bed": 8,
-    "trainerName": "Goraud Wherton",
-    "trainerPhone": "2301380291"
-  }, {
-    "name": "Sunny",
-    "species": "Machamp",
-    "category": "Ice",
-    "dateOfBirth": "1955-04-16",
-    "bed": 8,
-    "trainerName": "Bethena Yakebovich",
-    "trainerPhone": "8545474347"
-  }, {
-    "name": "Sparky",
-    "species": "Lapras",
-    "category": "Fire",
-    "dateOfBirth": "1957-10-04",
-    "bed": 1,
-    "trainerName": "Justin Troy",
-    "trainerPhone": "7889620315"
-  }, {
-    "_id": "657a56b90b66096d5a6ca134",
-    "name": "Bubbles",
-    "species": "Empathy",
-    "category": "Gardevoir",
-    "dateOfBirth": "2005-12-11T00:00:00.000Z",
-    "bed": "12",
-    "trainerName": "William Bowers",
-    "trainerPhone": "026363631"
-  }, {
-    "_id": "657a56c6fe22b20132604808",
-    "name": "Kringo",
-    "species": "Clefairy",
-    "category": "Fairy",
-    "dateOfBirth": "1992-03-29T00:00:00.000Z",
-    "bed": "5",
-    "trainerName": "Billy McNab",
-    "trainerPhone": "0238945678"
-  }]
+  "name": "Buddy",
+  "species": "Electivire",
+  "category": "Electric",
+  "dateOfBirth": "2009-12-28",
+  "allergies": "Peanuts",
+  "bed": 2,
+  "trainerName": "Freda Rouse",
+  "trainerPhone": "4018193342"
+}, {
+  "name": "Max",
+  "species": "Gyarados",
+  "category": "Water/Flying",
+  "dateOfBirth": "2011-04-26",
+  "allergies": "Shellfish",
+  "bed": 8,
+  "trainerName": "Theo Kennefick",
+  "trainerPhone": "5014706787"
+}, {
+  "name": "Charlie",
+  "species": "Espeon",
+  "category": "Psychic",
+  "dateOfBirth": "2007-01-12",
+  "allergies": "Eggs",
+  "bed": 6,
+  "trainerName": "Micki Tolchar",
+  "trainerPhone": "6132982785"
+}, {
+  "name": "Lucy",
+  "species": "Scizor",
+  "category": "Bug/Steel",
+  "dateOfBirth": "2008-07-03",
+  "allergies": "Dairy",
+  "bed": 14,
+  "trainerName": "Janean Olivari",
+  "trainerPhone": "5074395413"
+}, {
+  "name": "Daisy",
+  "species": "Ampharos",
+  "category": "Electric",
+  "dateOfBirth": "2008-06-26",
+  "allergies": "Tree Nuts",
+  "bed": 9,
+  "trainerName": "Melodee Jodkowski",
+  "trainerPhone": "8615657590"
+}, {
+  "name": "Rocky",
+  "species": "Houndoom",
+  "category": "Dark/Fire",
+  "dateOfBirth": "2007-08-03",
+  "allergies": "Soy",
+  "bed": 9,
+  "trainerName": "Farlie Varnals",
+  "trainerPhone": "9824892997"
+}, {
+  "name": "Bailey",
+  "species": "Alakazam",
+  "category": "Psychic",
+  "dateOfBirth": "2011-11-28",
+  "allergies": "Wheat",
+  "bed": 10,
+  "trainerName": "Jennifer De Beauchemp",
+  "trainerPhone": "9247319752"
+}, {
+  "name": "Molly",
+  "species": "Tyranitar",
+  "category": "Rock/Dark",
+  "dateOfBirth": "2007-02-10",
+  "allergies": "Fish",
+  "bed": 1,
+  "trainerName": "Tybi Feldstern",
+  "trainerPhone": "9234210338"
+}, {
+  "name": "Sadie",
+  "species": "Blaziken",
+  "category": "Fire/Fighting",
+  "dateOfBirth": "2007-06-16",
+  "allergies": "Sesame",
+  "bed": 6,
+  "trainerName": "Isobel Sweeting",
+  "trainerPhone": "6285727603"
+}, {
+  "name": "Lola",
+  "species": "Milotic",
+  "category": "Water",
+  "dateOfBirth": "2008-07-15",
+  "allergies": "Mustard",
+  "bed": 6,
+  "trainerName": "Cathleen Eouzan",
+  "trainerPhone": "8427178713"
+}, {
+  "name": "Buddy",
+  "species": "Metagross",
+  "category": "Steel/Psychic",
+  "dateOfBirth": "2011-02-27",
+  "allergies": "Corn",
+  "bed": 5,
+  "trainerName": "Riccardo Gillet",
+  "trainerPhone": "4638390299"
+}, {
+  "name": "Max",
+  "species": "Gardevoir",
+  "category": "Psychic/Fairy",
+  "dateOfBirth": "2008-04-23",
+  "allergies": "Latex",
+  "bed": 4,
+  "trainerName": "Ignacio Colliar",
+  "trainerPhone": "7842845456"
+}, {
+  "name": "Charlie",
+  "species": "Lucario",
+  "category": "Fighting/Steel",
+  "dateOfBirth": "2008-02-18",
+  "allergies": "Strawberries",
+  "bed": 9,
+  "trainerName": "Lorianna Kilday",
+  "trainerPhone": "6964696131"
+}, {
+  "name": "Lucy",
+  "species": "Salamence",
+  "category": "Dragon/Flying",
+  "dateOfBirth": "2011-11-04",
+  "allergies": "Pineapple",
+  "bed": 7,
+  "trainerName": "Grazia Vango",
+  "trainerPhone": "8642020497"
+}, {
+  "name": "Daisy",
+  "species": "Froslass",
+  "category": "Ice/Ghost.",
+  "dateOfBirth": "2009-10-22",
+  "allergies": "Mango",
+  "bed": 6,
+  "trainerName": "Yvor Guyonneau",
+  "trainerPhone": "7792470687"
+}]
+
   
 
 const patientrecords = [{

@@ -21,21 +21,6 @@ async function getPatientsByNurse(userID){
     return await Patient.find({assignedNurse: userID}).exec();
 }
 
-async function createPatient(patientDetails){
-    let newPatient = new Patient(
-        {
-            name: patientDetails.name,
-            species: patientDetails.species,
-            category: patientDetails.category,
-            dateOfBirth: patientDetails.dateOfBirth,
-            bed: patientDetails.bed,
-            trainerName: patientDetails.trainerName,
-            trainerPhone: patientDetails.trainerPhone
-        }
-    )
-    return await newPatient.save();
-}
-
 async function createPatientwithDoctorandNurse(patientDetails){
     let newPatient = new Patient(
         {
@@ -43,6 +28,7 @@ async function createPatientwithDoctorandNurse(patientDetails){
             species: patientDetails.species,
             category: patientDetails.category,
             dateOfBirth: patientDetails.dateOfBirth,
+            allergies: patientDetails.allergies,
             assignedDoctor: patientDetails.assignedDoctor,
             assignedNurse: patientDetails.assignedNurse,
             bed: patientDetails.bed,
@@ -66,7 +52,6 @@ module.exports = {
     getAllPatients, 
     getPatientById, 
     getPatientByName,
-    createPatient, 
     createPatientwithDoctorandNurse, 
     updatePatient, 
     deletePatient, 
