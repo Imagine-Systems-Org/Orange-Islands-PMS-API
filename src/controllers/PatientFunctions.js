@@ -1,6 +1,5 @@
 const {Patient} = require('../models/PatientModel');
 
-// Model.find({}) returns all documents in a collection.
 async function getAllPatients(){
     return await Patient.find({}).exec();
 }
@@ -40,7 +39,6 @@ async function createPatientwithDoctorandNurse(patientDetails){
 }
 
 async function updatePatient(patientID, patientDetails){
-    // Find user, update it, return the updated user data.
     return await Patient.findByIdAndUpdate(patientID, patientDetails, {returnDocument: 'after'}).exec();
 }
 

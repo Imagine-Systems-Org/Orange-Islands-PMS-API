@@ -1,6 +1,5 @@
 const {PatientRecord} = require('../models/PatientRecordModel');
 
-// Model.find({}) returns all documents in a collection.
 async function getAllPatientRecords(){
     return await PatientRecord.find({}).exec();
 }
@@ -15,7 +14,6 @@ async function getPatientRecordByPatient(patientID){
 
 async function createPatientRecord(patientRecordDetails){
 
-    // Create new user based on userDetails data
     let newPatientRecord = new PatientRecord(
         {
             treatment: patientRecordDetails.treatment,
@@ -27,13 +25,11 @@ async function createPatientRecord(patientRecordDetails){
             patient: patientRecordDetails.patient
         }
     )
-    
-    // And save it to DB
+
     return await newPatientRecord.save();
 }
 
 async function updatePatientRecord(patientRecordID, patientRecordDetails){
-    // Find user, update it, return the updated user data.
     return await PatientRecord.findByIdAndUpdate(patientRecordID, patientRecordDetails, {returnDocument: 'after'}).exec();
 }
 

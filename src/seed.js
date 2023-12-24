@@ -1,21 +1,13 @@
 const mongoose = require('mongoose');
 const { databaseConnector } = require('./database');
 
-// Import the models that we'll seed, so that 
-// we can do things like Role.insertMany()
 const { User } = require('./models/UserModel');
 const { Patient } = require('./models/PatientModel');
 const { PatientRecord } = require('./models/PatientRecordModel');
 const { hashString } = require('./controllers/UserFunctions');
 
-// Make sure this file can read environment variables.
 const dotenv = require('dotenv');
 dotenv.config();
-
-// Create some raw data for the Roles collection,
-// obeying the needed fields from the Role schema.
-
-// To fill in after creating user data encryption functionality.
 
 const doctors = [{
     "firstName": "Haven",
@@ -606,8 +598,6 @@ const patientrecords = [{
     "prescriptions": "Lisinopril"
   }]
 
-
-// Connect to the database.
 var databaseURL = "";
 switch (process.env.NODE_ENV.toLowerCase()) {
     case "test":
@@ -624,12 +614,6 @@ switch (process.env.NODE_ENV.toLowerCase()) {
         break;
 }
 
-
-// This functionality is a big promise-then chain.
-// This is because it requires some async functionality,
-// and that doesn't work without being wrapped in a function.
-// Since .then(callback) lets us create functions as callbacks,
-// we can just do stuff in a nice .then chain.
 databaseConnector(databaseURL).then(() => {
     console.log("Database connected successfully!");
 }).catch(error => {
@@ -639,10 +623,8 @@ databaseConnector(databaseURL).then(() => {
     `);
 }).then(async () => {
     if (process.env.WIPE == "true"){
-        // Get the names of all collections in the DB.
         const collections = await mongoose.connection.db.listCollections().toArray();
 
-        // Empty the data and collections from the DB so that they no longer exist.
         collections.map((collection) => collection.name)
         .forEach(async (collectionName) => {
             mongoose.connection.db.dropCollection(collectionName);
@@ -651,31 +633,23 @@ databaseConnector(databaseURL).then(() => {
     }
 }).then(async () => {
 
-    // Iterate through the users array, using for-of to enable async/await.
     for (const doctor of doctors) {
-        // Set the password of the user.
         doctor.password = await hashString("password1");
     }
     for (const nurse of nurses) {
-        // Set the password of the user.
         nurse.password = await hashString("password1");
     }
     for (const pharmacist of pharmacists) {
-        // Set the password of the user.
         pharmacist.password = await hashString("password1");
     }
-    // Save the users to the database.
     let doctorsCreated = await User.insertMany(doctors);
     let nursesCreated = await User.insertMany(nurses);
     let pharmacistsCreated = await User.insertMany(pharmacists);
 
-    // Same again for posts;
-    // pick a random user and assign that user as the author of a post.
     for (const patient of patients) {
         patient.assignedDoctor = doctorsCreated[Math.floor(Math.random() * doctorsCreated.length)].id;
         patient.assignedNurse = nursesCreated[Math.floor(Math.random() * nursesCreated.length)].id;
     }
-    // Then save the posts to the database.
     let patientsCreated = await Patient.insertMany(patients);
 
     for (const record of patientrecords) {
@@ -683,10 +657,8 @@ databaseConnector(databaseURL).then(() => {
     }
 
     let patientrecordsCreated = await PatientRecord.insertMany(patientrecords);
-    // Log modified to list all data created.
     console.log("New DB data created.\n" + JSON.stringify({doctors: doctorsCreated, nurses: nursesCreated, pharmacists: pharmacistsCreated, patients: patientsCreated, patientrecords: patientrecordsCreated}, null, 4));
 }).then(() => {
-    // Disconnect from the database.
     mongoose.connection.close();
     console.log("DB seed connection closed.")
 });

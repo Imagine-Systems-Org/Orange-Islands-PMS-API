@@ -1,6 +1,4 @@
-// Import Express
 const express = require('express');
-// Create an instance of an Express Router
 const router = express.Router();
 
 
@@ -15,12 +13,10 @@ const {
     createPatientwithDoctorandNurse
 } = require('./PatientFunctions');
 
-// Show all posts
 router.get('/', async (request, response) => {
     response.json(await getAllPatients());
 });
 
-// Show posts by specific user
 router.get('/assignedDoctor/:userID', async (request, response) => {
     response.json(await getPatientsByDoctor(request.params.userID));
 });
@@ -29,7 +25,6 @@ router.get('/assignedNurse/:userID', async (request, response) => {
     response.json(await getPatientsByNurse(request.params.userID));
 }); 
 
-// Show specific post by ID
 router.get('/:patientID', async (request, response) => {
     response.json(await getPatientById(request.params.patientID));
 });
@@ -57,7 +52,6 @@ async (request, response) => {
     response.json({patient: newPatientDoc});
 });
 
-// Update a specific post
 router.put('/:patientID', async (request, response) => {
     let patientDetails = request.body;
     let patientID = request.params.patientID;
@@ -65,11 +59,8 @@ router.put('/:patientID', async (request, response) => {
     response.json(await updatePatient(patientID, patientDetails));
 });
 
-// Delete a specific post
 router.delete('/:patientID', async (request, response) => {
     response.json(await deletePatient(request.params.patientID));
 });
 
-
-// Export the router so that other files can use it:
 module.exports = router;
